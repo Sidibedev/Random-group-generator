@@ -146,7 +146,7 @@
       }
     }
   },
-  "defaultProject": "angular-electron",
+  "defaultProject": "Random-group-generator",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

@@ -1,5 +1,75 @@
-<div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
+
+<div class="containerH">
+    <header>
+
+        <strong>Random Group Generator </strong>
+        <nav>
+          <ul>
+            <li>
+              <img src="./assets/btn-min.svg" alt=""  (click)="minimize()">
+            </li>
+            <li>
+              <img src="./assets/btn-close.svg" alt="" (click)="close()">
+            </li>
+          </ul>
+        </nav>
+        </header>
 </div>
+
+
+<div class="container">
+
+
+ <img style="margin-top : 20px;width: 100px; height: 100px;" src="./assets/groupicone.png" alt="">
+  <h1 class="title"> 
+    Random Group Generator
+  </h1>
+  <form [formGroup]="formGroup" (ngSubmit)="submit()">
+      <div class="form-group">
+        
+          <input  style="background: rgba(255,255,255,0.1);
+          border: 1px  rgba(255,255,255,0.2);color: white"  [formControl]="numgroup" placeholder="Number of students per group" type="number" name="title" id="title" class="form-controll"/>
+          
+        </div>
+      <div class="form-group file-area">
+
+          
+   
+          <input  accept=".xlsx" type="file" name="images" id="images" required="required" multiple="multiple"  (change)="onFileChange($event)"/>
+          <div class="file-dummy">
+            <div class="success">Great, you can generate group now.</div>
+            <div class="default">Please import the list of students</div>
+          </div>
+          <p style="color:rgb(156, 156, 156) ; font-size: 10px;text-align: right">Note : Only .xlsx files are supported </p>
+        </div>
+
+      <button class="bubbly-button" type="submit">Generate groups</button>
+
+  </form>
+
+  
+<div style="display: grid;
+grid-template-columns: auto auto auto;">
+
+    <div class="card" *ngFor="let item of groups; index as i">
+        <p>Groupe {{i+1}}</p>
+        <div class="containercard" *ngFor="let itemgroup of item">
+          <h4> <img src="./assets/student16.png" alt=""> <b> {{itemgroup.prenom}} {{itemgroup.nom}}</b></h4> 
+          
+            
+          
+        </div>
+     
+
+</div>
+
+  
+ 
+ 
+</div>
+<footer style="margin-bottom:10px">
+  <p style="color:gray ; font-size: 12px"> By M.A.Sidibe 2018. All rights reserved. </p>
+</footer>
+</div>
+
+
