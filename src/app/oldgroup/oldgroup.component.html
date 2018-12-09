@@ -29,7 +29,7 @@
 
 
 
-  <form style="padding-top: 30px" [formGroup]="formGroup" (ngSubmit)="submit()">
+  <form style="padding-top: 30px" [formGroup]="formGroup">
      
       <div class="form-group file-area">
 
@@ -55,10 +55,8 @@
       
 
   </form>
-  <hr *ngIf="exporter" style="border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 5px;">
-  <button *ngIf="exporter" class="bubbly-export"  (click)="export()" > <img src="./assets/export.png" alt=""> Export</button>
-  <button *ngIf="exporter" class="bubbly-export"  (click)="imprimer()" > <img src="./assets/print.png"> Print </button>
+ 
+ 
 
   <div style="display: grid;grid-template-columns: auto auto auto;">
       <div  *ngFor="let item of groupes; index as i">
@@ -66,8 +64,8 @@
         <div class="card">
         
           <div class="containercard" *ngFor="let itemgroup of item">
-            <h4 style="color:white"> <img src="./assets/student16.png" alt=""> <b style="margin-left:5px"> {{itemgroup.prenom}} {{itemgroup.nom}}</b></h4> 
-            
+            <h4 style="color:white"> <img src="./assets/student16.png" alt=""> <b style="margin-left:5px"> {{itemgroup.prenom}} {{itemgroup.nom}}</b>  <span style="text-align:end;color: gray;font-size: 10px;margin-left: 15px">{{itemgroup.classe}}</span></h4> 
+         
         </div>
       </div>
  </div>

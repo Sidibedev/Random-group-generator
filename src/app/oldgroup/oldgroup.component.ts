@@ -73,7 +73,7 @@ export class OldgroupComponent implements OnInit {
         
         this.groupes= gro
 
-        console.log(this.groupes)
+  
       
         
         
