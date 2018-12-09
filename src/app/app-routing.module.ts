@@ -1,4 +1,5 @@
 import { HomeComponent } from './components/home/home.component';
+import { OldgroupComponent } from './oldgroup/oldgroup.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -6,6 +7,10 @@ const routes: Routes = [
     {
         path: '',
         component: HomeComponent
+    },
+    {
+        path: 'visionning',
+        component: OldgroupComponent
     }
 ];
 

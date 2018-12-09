@@ -38,6 +38,9 @@
     "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "dependencies": {
+    "file-saver": "^2.0.0",
+    "jspdf": "^1.4.1",
+    "jspdf-autotable": "^2.3.5",
     "xlsx": "^0.14.1"
   },
   "devDependencies": {
