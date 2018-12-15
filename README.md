@@ -18,14 +18,7 @@ Random Group generator is a desktop app made withe electron and angular that all
   
    ![home](./oldgroups.png)
   
-## To build for development
-
-- **in a terminal window** -> npm start  
-
-
-
-
-## Branch & Packages version
+## Download it
 
 - Angular 4 & Electron 1 : Branch [angular4](https://github.com/maximegris/angular-electron/tree/angular4)
 - Angular 5 & Electron 1 : Branch [angular5](https://github.com/maximegris/angular-electron/tree/angular5)
