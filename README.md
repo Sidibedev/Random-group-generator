@@ -1,5 +1,4 @@
-[![Angular Logo](Random-group-generator/Capture d’écran 2018-12-15 à 09.44.59.png)]
-
+![alt text](Random-group-generator/Capture d’écran 2018-12-15 à 09.44.59.png)
 
 # Random Group Generator
 
