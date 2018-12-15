@@ -18,11 +18,4 @@ Random Group generator is a desktop app made withe electron and angular that all
   
    ![home](./oldgroups.png)
   
-## Download it
-
-- [Windows]()
-- [Linux]()
-- [Mac](https://drive.google.com/file/d/1iNbVfYl4pggRz5xGXofBssODTjDx5yCP/view?usp=sharing)
-
-
 
