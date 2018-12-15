@@ -11,7 +11,7 @@ Random Group generator is a desktop app made withe electron and angular that all
   ![home](./groups.png)
 - You can export it (.xsl) or print it(.pdf)
 - Check old groups
-  
+  ![home](./old.png)
 ## To build for development
 
 - **in a terminal window** -> npm start  
