@@ -8,6 +8,7 @@ Random Group generator is a desktop app that allows teachers to generate random 
 - Import the list of the class(we onky support .xsls files at the moment.
 - Click to the generate groups button.
   
+  ![home](./groups.png)
 
 ## To build for development
 
