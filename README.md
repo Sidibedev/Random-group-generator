@@ -20,7 +20,7 @@ Random Group generator is a desktop app made withe electron and angular that all
   
 ## Download it
 
-- [Windows](https://github.com/maximegris/angular-electron/tree/angular4)
+- [Windows](https://drive.google.com/file/d/1iNbVfYl4pggRz5xGXofBssODTjDx5yCP/view?usp=sharing)
 - [Linux](https://github.com/maximegris/angular-electron/tree/angular5)
 - [Mac](https://github.com/maximegris/angular-electron/tree/angular6)
 
