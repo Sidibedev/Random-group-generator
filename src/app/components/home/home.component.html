@@ -13,37 +13,33 @@
             </li>
           </ul>
         </nav>
-       
-      
-        </header>
-       
-        
-</div>
-<div style="text-align:end;margin:20px">
-     <button style="background-color:rgba(255,255,255,0.1);color:white;border-radius: 40px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);" routerLink="/visionning"> check old groups</button> 
+
+   </header>
+
+
 </div>
 
+<div style="text-align:end;margin:20px">
+     <button style="background-color:rgba(255,255,255,0.1);color:white;border-radius: 40px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);" routerLink="/visionning"> check old groups</button>
+</div>
 
 
 <div class="container">
-
-
- <img style="margin-top : 20px;width: 100px; height: 100px;" src="./assets/groupicone.png" alt="">
-  <h1 class="title"> 
+  <img style="margin-top : 20px;width: 100px; height: 100px;" src="./assets/groupicone.png" alt="">
+  <h1 class="title">
     Random Group Generator
   </h1>
-  
   <form [formGroup]="formGroup" (ngSubmit)="submit()">
       <div class="form-group">
-        
+
           <input  style="background: rgba(255,255,255,0.1);
           border: 1px  rgba(255,255,255,0.2);color: white"  [formControl]="numgroup" placeholder="Number of students per group" type="number" name="title" id="title" class="form-controll"/>
-          
+
         </div>
       <div class="form-group file-area">
 
-          
-   
+
+
           <input  accept=".xlsx" type="file" name="images" id="images" required="required" multiple="multiple"  (change)="onFileChange($event)"/>
           <div class="file-dummy">
             <div class="success">Great, you can generate group now.</div>
@@ -53,31 +49,21 @@
         </div>
 
         <button class="bubbly-button" type="submit">Generate groups</button> <br>
-
-     
-
-           
-    
-           
-       
-
-      
-
   </form>
   <hr *ngIf="exporter" style="border: 1px solid rgba(255,255,255,0.1);
   border-radius: 5px;">
   <button *ngIf="exporter" class="bubbly-export"  (click)="export()" > <img src="./assets/export.png" alt=""> Export</button>
   <button *ngIf="exporter" class="bubbly-export"  (click)="imprimer()" > <img src="./assets/print.png"> Print </button>
 
-   
+
   <div style="display: grid;grid-template-columns: auto auto auto;">
       <div  *ngFor="let item of groups; index as i">
           <p style="color:white;font-weight:bold">Groupe {{i+1}}</p>
         <div class="card">
-        
+
           <div class="containercard" *ngFor="let itemgroup of item">
-            <h4 style="color:white"> <img src="./assets/student16.png" alt=""> <b style="margin-left:5px"> {{itemgroup.prenom}} {{itemgroup.nom}}</b></h4> 
-            
+            <h4 style="color:white"> <img src="./assets/student16.png" alt=""> <b style="margin-left:5px"> {{itemgroup.prenom}} {{itemgroup.nom}}</b></h4>
+
         </div>
       </div>
  </div>
@@ -88,5 +74,3 @@
   <p style="color:gray ; font-size: 10px"> By M.A.Sidibe 2018. All rights reserved. </p>
 </footer>
 </div>
-
-

@@ -1,5 +1,5 @@
 import { HomeComponent } from './components/home/home.component';
-import { OldgroupComponent } from './oldgroup/oldgroup.component';
+import { OldgroupComponent } from './components/oldgroup/oldgroup.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 

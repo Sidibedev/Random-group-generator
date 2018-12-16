@@ -12,7 +12,6 @@ import {ElectronService} from '../../providers/electron.service'
 })
 export class HomeComponent implements OnInit {
   arrayBuffer:any;
-
   EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
   EXCEL_EXTENSION = '.xlsx';
   exporter:boolean = false;
@@ -22,7 +21,6 @@ export class HomeComponent implements OnInit {
     [
       Validators.required,
       Validators.pattern('[a-zA-Z-e]*')
-      
     ]
   );
   file:File;
@@ -32,19 +30,16 @@ export class HomeComponent implements OnInit {
   });
   constructor(private fb: FormBuilder, private cd: ChangeDetectorRef , private electron:ElectronService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  minimize() {
+  minimize() { // minimize the window
     this.electron.window.minimize()
   }
-  close() {
+  close() { // Close the window
     this.electron.window.close()
   }
   onFileChange(event) {
-
-    this.file= event.target.files[0]; 
-   
+    this.file= event.target.files[0];
     let fileReader = new FileReader();
     fileReader.onload = (e) => {
         this.arrayBuffer = fileReader.result;
@@ -58,36 +53,27 @@ export class HomeComponent implements OnInit {
         this.students = XLSX.utils.sheet_to_json(worksheet,{raw:true});
     }
     fileReader.readAsArrayBuffer(this.file);
+   }
 
-
-  
-    }
-     shuffle(o){ // melange les etudiants
+  shuffle(o){ // suffle the etudiant list
       for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
       return o;
-   }; 
+   };
 
-    submit() {
+  submit() {
       if (this.numgroup.valid) {
-        
         this.groups  =[]
         this.students = this.shuffle(this.students);
-        
-        
         var numPeople = this.students.length;
-         
-       
-         
-         var numGroups = (numPeople / this.numgroup.value);
-         var numeroGroupe= 1;
-         var personIndex = 0;
-         while (numGroups > 0.0) {
+        var numGroups = (numPeople / this.numgroup.value);
+        var numeroGroupe= 1;
+        var personIndex = 0;
+        while (numGroups > 0.0) {
            var newGroup = [];
            var i;
            if ( numGroups < 1.0 ) {
              while( personIndex < numPeople ) {
                 newGroup[newGroup.length] = this.students[personIndex];
-                
                 this.students[personIndex].groupe =numeroGroupe;
               personIndex++;
              }
@@ -95,57 +81,42 @@ export class HomeComponent implements OnInit {
            else {
             for ( i = this.numgroup.value ; i > 0 ; i-- ) {
               newGroup[newGroup.length] = this.students[personIndex];
-              
               this.students[personIndex].groupe = numeroGroupe;
               personIndex++;
-              
+
             }
            }
-           
            this.groups[this.groups.length] = newGroup;
            numeroGroupe++
            this.exporter = true
-           
            numGroups--;
-        
+         }
       }
-      }
-     
-    
-  
+    }
 
-}
-
-export() {
-  
+ export() {
+  // export the doc excel
   const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.students);
   const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
   const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
   this.saveAsExcelFile(excelBuffer, "groupe");
-  
-}
+
+ }
 
  saveAsExcelFile(buffer: any, fileName: string): void {
   const data: Blob = new Blob([buffer], {type: this.EXCEL_TYPE});
   FileSaver.saveAs(data, fileName  + new  Date().getTime() + this.EXCEL_EXTENSION);
-}
+  }
 
-imprimer() {
-
+ imprimer() {
+  // Export the doc pdf
   var doc = new jsPDF();
   var col = ["Prenom", "Nom" , "Classe" , "Groupe"];
   var rows = [];
-
-/* The following array of object as response from the API req  */
-
-
-
-this.students.forEach(element => {      
+  this.students.forEach(element => {
   var temp = [element.prenom,element.nom,element.classe,element.groupe];
   rows.push(temp);
-
-});        
-
+  });
   doc.autoTable(col, rows);
   doc.save('Test.pdf');
 

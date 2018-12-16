@@ -13,14 +13,14 @@
             </li>
           </ul>
         </nav>
-       
-      
+
+
         </header>
-       
-        
+
+
 </div>
 <div style="text-align:left;margin:20px">
-     <button style="background-color:rgba(255,255,255,0.1);color:white;border-radius: 40px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);" routerLink="">Go back</button> 
+     <button style="background-color:rgba(255,255,255,0.1);color:white;border-radius: 40px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);" routerLink="">Go back</button>
 </div>
 
 
@@ -30,42 +30,42 @@
 
 
   <form style="padding-top: 30px" [formGroup]="formGroup">
-     
+
       <div class="form-group file-area">
 
-          
-   
+
+
           <input  accept=".xlsx" type="file" name="images" id="images" required="required" multiple="multiple"  (change)="onFileChange($event)"/>
           <div class="file-dummy">
-            <div class="success">Great, you can generate group now.</div>
+            <div class="success">Great</div>
             <div class="default">Please import the list of groups</div>
           </div>
-         
+
         </div>
 
-    
 
-     
 
-           
-    
-           
-       
 
-      
+
+
+
+
+
+
+
 
   </form>
- 
- 
+
+
 
   <div style="display: grid;grid-template-columns: auto auto auto;">
       <div  *ngFor="let item of groupes; index as i">
           <p style="color:white;font-weight:bold">Groupe {{i+1}}</p>
         <div class="card">
-        
+
           <div class="containercard" *ngFor="let itemgroup of item">
-            <h4 style="color:white"> <img src="./assets/student16.png" alt=""> <b style="margin-left:5px"> {{itemgroup.prenom}} {{itemgroup.nom}}</b>  <span style="text-align:end;color: gray;font-size: 10px;margin-left: 15px">{{itemgroup.classe}}</span></h4> 
-         
+            <h4 style="color:white"> <img src="./assets/student16.png" alt=""> <b style="margin-left:5px"> {{itemgroup.prenom}} {{itemgroup.nom}}</b>  <span style="text-align:end;color: gray;font-size: 10px;margin-left: 15px">{{itemgroup.classe}}</span></h4>
+
         </div>
       </div>
  </div>
@@ -73,5 +73,3 @@
 </div>
 
 </div>
-
-
